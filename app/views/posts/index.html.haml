@@ -1,14 +1,11 @@
 - content_for :sidebar do
+	%h2 About Me
+	%p I'm Becca
 	%ul.side-nav
 		- @posts.each do |post|
 			= post_link(post, @post)
-			
-	%h2 About Me
-
-	%p I'm a web developer but I can't get this to work!
 
 - @posts.each do |post|
 	.post-preview
 		%h2= link_to(post.title, post)
-
 		%p= post.body.truncate(75)
