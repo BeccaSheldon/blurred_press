@@ -1,14 +1,15 @@
-=render '/layouts/sidebar'
+- content_for :sidebar do
+	%h3 Author: Nikhil
+	%h6 Date: October 24, 2013
+	%p About Nikhil: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolores veniam ipsam sit natus praesentium beatae harum odit sequi fuga. A est id dicta quas nobis enim ea animi dolores?
 
 %p#notice= notice
 
 %article
-  %h1.title= @post.title
+	%h1.title= @post.title
 
-  %time{datetime: @post.date.to_s, pubdate: true}= @post.date.to_s(:short)
+	%time{datetime: @post.date.to_s, pubdate: true}= @post.date.to_s(:short)
 
-  .body= simple_format(@post.body)
-
-= link_to 'Edit', edit_post_path(@post), class: 'button'
-\|
-= link_to 'Back', posts_path
+	.body= simple_format(@post.body)
+	= link_to 'Edit', edit_post_path(@post), class: 'nice medium button expand'
+	= link_to 'Back', posts_path, class: 'nice medium button expand'
